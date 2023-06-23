@@ -99,7 +99,7 @@ const cardsHTML = carsList.map((car) => {
 
 
 newdiv.innerHTML = cardsHTML;
-
+ 
 
 
 div.insertAdjacentElement("beforebegin", newdiv);
