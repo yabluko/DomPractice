@@ -1,15 +1,71 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>DOM (Document Object Model)</title>
+  <title>LocalStorage</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  
 
-  
-  <script src='./index.js'></script>
+<body>
+
+  <div class="wrapper">
+    <h2>Create your Pizza!</h2>
+    <p></p>
+    <ul class="items-list">
+      <li>Load ingredients...</li>
+    </ul>
+    <form class="add-items-form">
+      <input type="text" name="item" placeholder="Name..." autocomplete="off" required>
+      <input type="submit" value="+ Add ingredient">
+    </form>
+  </div>
+
+  <script>
+    const addItemsForm = document.querySelector('.add-items-form');
+    const itemsList = document.querySelector('.items-list');
+    const items = JSON.parse(localStorage.getItem('items')) || [];
+
+    function addItem(event){
+      event.preventDefault();
+      const text = event.target.item.value;
+      const item = {
+        product : text, 
+        checked : false,
+      }
+      items.push(item);
+      localStorage.setItem('items', JSON.stringify(items));
+      displayItems(items, itemsList);
+      this.reset(); // перезагрузка форми
+    }
+    
+    function displayItems(ingredients, ingredientsList){
+      console.log(ingredients, ingredientsList);
+      ingredientsList.innerHTML = ingredients.map((ingredient, index) => {
+        return `
+        <li>
+        <input type='checkbox' id='item${index}' data-index='${index}' ${ingredient.checked ? 'checked' : ''}/>
+        <label for='item${index}'>${ingredient.product}</label>
+        </li>`;
+      }).join(''); 
+      
+    }
+
+    function addCheking(event){
+      if(!event.target.matches('input')) return;
+      const element = event.target.dataset.index;
+      items[element].checked = !items[element].checked;
+      localStorage.JSON.setItem('items', JSON.stringify(items));
+      displayItems(items, itemsList);
+    }
+
+    addItemsForm.addEventListener('submit', addItem );
+    itemsList.addEventListener('click', addCheking );
+    displayItems(items, itemsList);
+
+  </script>
+
+
 </body>
+
 </html>

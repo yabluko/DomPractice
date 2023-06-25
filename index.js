@@ -120,47 +120,50 @@
 // })
 
 //силка на массив
-const students = ['Oleg','Yurii','Veronika','Vasia'];
+// const students = ['Oleg','Yurii','Veronika','Vasia'];
 
 
 
-const group2 = students.slice();
-group2[0] = 'Sasha';
+// const group2 = students.slice();
+// group2[0] = 'Sasha';
 
 
 
-const group3 = [].concat(students);
+// const group3 = [].concat(students);
 
 
-const group4 = [...students];
+// const group4 = [...students];
 
-const group5 = Array.from(students);
-
-
-
-const person = {
-    name :'Peter',
-    age: 30 ,
-    social: {
-        twitter : 'twitter',
-        facebook : 'facebook',
-    }
-}
-
-const student = person;
-student.age = 100;
-
-console.log(person);
+// const group5 = Array.from(students);
 
 
 
-const policeman = Object.assign({}, person, {skills: 'good communication'});
+// const person = {
+//     name :'Peter',
+//     age: 30 ,
+//     social: {
+//         twitter : 'twitter',
+//         facebook : 'facebook',
+//     }
+// }
+
+// const student = person;
+// student.age = 100;
+
+// console.log(person);
 
 
 
-const newperson = JSON.parse(JSON.stringify(person));
-newperson.social.twitter = 'kekeke1111';
+// const policeman = Object.assign({}, person, {skills: 'good communication'});
 
 
 
-console.log(newperson);
+// const newperson = JSON.parse(JSON.stringify(person));
+// newperson.social.twitter = 'kekeke1111';
+
+
+
+// console.log(newperson);
+
+
+
