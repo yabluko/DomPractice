@@ -167,3 +167,25 @@
 
 
 
+
+const people = [
+    { name: 'Stas', year: 2000 },
+    { name: 'Vasya', year: 1986 },
+    { name: 'Alex', year: 1990 },
+    { name: 'Oleg', year: 2004 },
+  ];
+
+  const comments = [
+    { text: 'Good post!', id: 523423 },
+    { text: 'I liked it', id: 823423 },
+    { text: 'Keep going bro', id: 2039842 },
+    { text: 'Trash!!!!', id: 123523 },
+    { text: 'Normally', id: 542328 }
+  ];
+
+  // Check that at least one person has 16years old
+
+  const sixteenYears = people.some(person => new Data().getFullYear() - person.year >= 16);
+
+  console.log(sixteenYears);
+
