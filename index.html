@@ -3,45 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Работа с массивами данных</title>
+  <title>Async Await</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <h2>Bind , Call & Apply</h2>
-  <script>
-   const auto = {
-    brand : "Tesla",
-    drive() {
-      console.log(this);
-      return `Turn on ${this.brand}`;
-    }
-   }
-
-   const motorBike = {
-    brand : 'Suzuki'
-   }
-
-  //  const autoDrive = auto.drive.bind(auto);  //кажемо js зроби нову функцію auto Drive і
-  //  коли вона буде визиватися значення this в цій функції буде рівне bind(auto)
-  //  const motorDrive = auto.drive.bind(motorBike);
-
-   const bill = {
-    tip: 0.1,
-    calculate(total){
-      console.log(this);
-      return total + total * this.tip;
-    }
-   }
-   
-   const pay = bill.calculate.bind(bill); 
-   console.log(pay(1000));
-   const payCount = bill.calculate.call(bill, 1000);
-   const payCount2 = bill.calculate.apply(bill, [1000]);
-
-   console.log(payCount);
-   console.log(payCount2);
-
-  </script>
+  <div class="wrapper">
+    <h2>Async Await</h2>
+    <video controls></video>
+  </div>
+  <script src='./index.js'></script>
 </body>
-
 </html>
